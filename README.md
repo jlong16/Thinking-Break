@@ -1,2 +1,2 @@
 # Thinking-Break
- Chrome Extension to Interupt Passive Scroll for Engagemebt
+ Chrome Extension to interrupt passive scrolling media consumption with active thinking and engagement
