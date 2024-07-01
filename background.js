@@ -28,8 +28,14 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
     } else if (buttonIndex === 1) {
       // "Sure" button clicked
       chrome.notifications.clear(notificationId);
-      // Here you can open a sidebar or another page
-      chrome.tabs.create({ url: 'questions.html' });
+      chrome.windows.create({
+        url: 'questions.html',
+        type: 'popup',
+        width: 400,
+        height: screen.height,
+        left: screen.width - 400,
+        top: 0
+      });
     }
   }
 });
