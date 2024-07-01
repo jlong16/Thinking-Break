@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      width: 200px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      width: 100%;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Settings</h2>
+  <label for="frequency">Alert Frequency (minutes):</label>
+  <input type="number" id="frequency" min="1" value="15">
+
+  <label for="delay">Not Now Delay (minutes):</label>
+  <input type="number" id="delay" min="1" value="15">
+
+  <button id="save">Save</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

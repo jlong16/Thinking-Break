@@ -28,14 +28,18 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
     } else if (buttonIndex === 1) {
       // "Sure" button clicked
       chrome.notifications.clear(notificationId);
-      chrome.windows.create({
-        url: 'questions.html',
-        type: 'popup',
-        width: 400,
-        height: screen.height,
-        left: screen.width - 400,
-        top: 0
+      chrome.windows.getCurrent({}, function(currentWindow) {
+        chrome.windows.create({
+          url: 'questions.html',
+          type: 'popup',
+          width: 400,
+          height: currentWindow.height,
+          left: currentWindow.left + currentWindow.width - 400,
+          top: currentWindow.top
+        });
       });
+      // Schedule the next alarm
+      chrome.alarms.create('thinkingBreakAlarm', { delayInMinutes: 0.5 });
     }
   }
 });
